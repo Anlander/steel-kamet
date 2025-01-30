@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 
 const Page = ({ blok }: any) => (

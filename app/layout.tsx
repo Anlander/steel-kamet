@@ -1,14 +1,10 @@
-import type { Metadata } from "next";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import { StoryblokProvider } from "@/components/StoryblokProvider";
 import "./globals.scss";
 import { Header } from "@/components/ui/Header/Header";
 import { Footer } from "@/components/ui/footer/footer";
 
-export const metadata: Metadata = {
-  title: "SteelKamet",
-  description: "",
-};
+
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,

@@ -1,35 +1,14 @@
-import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
-import { redirect } from "next/navigation";
+import { getData } from "@/lib/get-data";
+import { StoryblokStory } from "@storyblok/react/rsc";
 
-const Page = async ({ params }: { params: { slug: string } }) => {
-  const pathname = params.slug;
+type Params = Promise<{ slug: string }>;
+
+const Page = async ({ params }: { params: Params }) => {
+  const pathname = (await params).slug;
   const slugName = pathname === undefined ? `home` : pathname;
-  const story = await fetchData(slugName);
-  
+  const story = await getData(slugName);
+
   return <StoryblokStory story={story.data.data.story} />;
 };
 
 export default Page;
-
-async function fetchData(slug: string) {
-  let sbParams = {
-    version: "draft" as const,
-  };
-
-  const client = getStoryblokApi();
-  try {
-    const data = await client.get(`cdn/stories/${slug}`, sbParams);
-
-    if (!data) {
-      throw new Error("Not Found");
-    }
-
-    return { data };
-  } catch (error: any) {
-    if (error.response && error.response.status === 500) {
-      redirect("/500");
-    } else {
-      throw error;
-    }
-  }
-}

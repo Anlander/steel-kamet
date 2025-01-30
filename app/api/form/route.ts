@@ -4,7 +4,7 @@ const usermail = process.env.MARKNAD_EMAIL;
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  const { name, email, message, phone, tid, date, birthday } = await req.json();
+  const { name, email, message, phone } = await req.json();
 
   const messageBody = `
     <div style="background-color: #f9f9f9; padding: 20px;">
