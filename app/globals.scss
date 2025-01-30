@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+.button {
+  background-color: #1f6fb2;
+  padding: 10px 25px;
+  color: white;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #3898ec;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  @media screen and (max-width: 1024px) {
+    font-size: 34px;
+  }
+}
+
+p {
+  font-size: 20px;
+  @media screen and (max-width: 1024px) {
+    font-size: 18px;
+  }
+}
+
+.hero-image {
+  img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    @media screen and (max-width: 1024px) {
+      width: 180px;
+    }
+  }
+}
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  @media screen and (max-width: 1024px) {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.card {
+  background-color: white;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  label {
+    padding: 10px 0;
+  }
+  input,
+  textarea {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    border-radius: 9px;
+    padding: 10px 20px;
+    border: 1px solid #172d32;
+  }
+  textarea {
+    width: 100%;
+  }
+  label {
+    font-family: "Poppins", sans-serif;
+  }
+  button {
+    font-family: p;
+    font-family: "Poppins", sans-serif;
+  }
+}
