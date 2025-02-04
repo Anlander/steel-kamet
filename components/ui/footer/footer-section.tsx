@@ -7,7 +7,7 @@ interface FooterProps {
 
 const FooterSection = ({ settings }: FooterProps) => {
   return (
-    <div className="py-20 lg:py-32 text-white mx-auto bg-[#1f6fb2] text-[20px]">
+    <div className="py-20 lg:py-32 text-white mx-auto bg-slate-600 text-[20px]">
       <div className="lg:max-w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-3">
         <div className="flex flex-col lg:items-start items-center mb-10 lg:mb-0">
           <span className="mb-2">{settings.street}</span>
