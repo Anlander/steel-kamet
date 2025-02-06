@@ -1,11 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { storyblokEditable } from "@storyblok/react";
 import Image from "next/image";
 import Link from "next/link";
 
 export const Hero = ({ blok }: any) => {
   return (
-    <div className="h-[50vh] lg:h-[70vh] relative flex justify-center items-center">
+    <div
+      className="h-[50vh] lg:h-[70vh] relative flex justify-center items-center"
+      {...storyblokEditable}
+    >
       <div className="absolute top-0 left-0 w-full h-full bg-white opacity-40 z-10" />
       <Image
         src={blok.img.filename}

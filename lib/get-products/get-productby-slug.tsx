@@ -2,34 +2,42 @@ import { getStoryblokApi } from "@storyblok/react";
 
 export async function getAterVinning(slug: string) {
   const sbParams = {
-    starts_with: `atervinningssystem-foer-betong/${slug}`,
+    version: "draft" as const,
   };
 
   const client = getStoryblokApi();
-  const data = await client.get(`cdn/stories/`, sbParams);
+  const data = await client.get(
+    `cdn/stories/atervinningssystem-foer-betong/${slug}`,
+    sbParams
+  );
 
-  return data.data.stories;
+  return data.data.story;
 }
 
 export async function getBetongBlandning(slug: string) {
   const sbParams = {
-    starts_with: `betongblandningsanlaeggningar/${slug}`,
+    version: "draft" as const,
   };
 
   const client = getStoryblokApi();
-  const data = await client.get(`cdn/stories/`, sbParams);
+  const data = await client.get(
+    `cdn/stories/betongblandningsanlaeggningar/${slug}`,
+    sbParams
+  );
 
-  return data.data.stories;
+  return data.data.story;
 }
 
 export async function getPrefab(slug: string) {
   const sbParams = {
-    version: "published" as const,
-    starts_with: `prefabricerade-loesningar/${slug}`,
+    version: "draft" as const,
   };
 
   const client = getStoryblokApi();
-  const data = await client.get(`cdn/stories/`, sbParams);
+  const data = await client.get(
+    `cdn/stories/prefabricerade-loesningar/${slug}`,
+    sbParams
+  );
 
-  return data.data.stories;
+  return data.data.story;
 }

@@ -4,16 +4,20 @@ import "./globals.scss";
 import { Header } from "@/components/ui/Header/Header";
 import { Footer } from "@/components/ui/footer/footer";
 
-
+const cachedFetch = (input: any, init?: any): Promise<Response> => {
+  return fetch(input, {
+    ...init,
+    cache: "no-store",
+  });
+};
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
   use: [apiPlugin],
   apiOptions: {
-    region: "eu",
+    fetch: cachedFetch,
   },
 });
-
 export default function RootLayout({
   children,
 }: {
