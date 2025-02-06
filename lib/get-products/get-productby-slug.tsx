@@ -2,7 +2,6 @@ import { getStoryblokApi } from "@storyblok/react";
 
 export async function getAterVinning(slug: string) {
   const sbParams = {
-    version: "published" as const,
     starts_with: `atervinningssystem-foer-betong/${slug}`,
   };
 
@@ -14,7 +13,6 @@ export async function getAterVinning(slug: string) {
 
 export async function getBetongBlandning(slug: string) {
   const sbParams = {
-    version: "published" as const,
     starts_with: `betongblandningsanlaeggningar/${slug}`,
   };
 

@@ -1,15 +1,49 @@
+import { Card } from "@/components/ui/produkt/card";
+import { Hero } from "@/components/ui/produkt/hero";
 import { getAterVinningArchive } from "@/lib/get-products/get-archive";
-import Link from "next/link";
+import { getSettings } from "@/lib/get-settings";
 
 const Page = async () => {
   const data = await getAterVinningArchive();
+  const settings = await getSettings();
+
+  const props = settings.data.data.story.content;
   return (
-    <div className="py-44">
-      {data.map((item: any) => (
-        <Link key={item.uuid} href={item.full_slug}>
-          {item.name}
-        </Link>
-      ))}
+    <div className="container py-28">
+      <Hero
+        sub={props.atervinning_sub}
+        title={props.atervinning_title}
+        image={props.atervinning_image.filename}
+        alt={props.atervinning_title}
+        text={props.atervinning_text}
+        content={props.atervinning_content}
+      />
+      <div className="grid grid-cols-1 gap-14">
+        <div className="flex flex-col gap-5">
+          <h3 className="font-bold uppercase">Betongåtervinningssystem</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+            {data
+              .filter((item: any) =>
+                item.content.category.includes("betongatervinning")
+              )
+              .map((item: any) => (
+                <Card key={item.uuid} item={item} />
+              ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-5">
+          <h3 className="font-bold uppercase">Formar för block</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+            {data
+              .filter((item: any) =>
+                item.content.category.includes("formar-block")
+              )
+              .map((item: any) => (
+                <Card key={item.uuid} item={item} />
+              ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
