@@ -17,7 +17,7 @@ const page = async ({ params }: { params: Params }) => {
         arrow={true}
       />
       <Content content={data.content.content} />
-      <Gallery gallery={data.content.gallery} />
+      {data.content.gallery && <Gallery gallery={data.content.gallery} />}
     </div>
   );
 };
