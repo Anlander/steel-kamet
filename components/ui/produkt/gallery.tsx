@@ -4,7 +4,7 @@ export const Gallery = ({ gallery }: any) => {
   return (
     <div className="container">
       <div className="grid grid-cols-4 gap-2">
-        {gallery.map((el: any) => (
+        {gallery?.map((el: any) => (
           <Image
             key={el.id}
             src={el.filename || "/"}

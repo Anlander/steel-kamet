@@ -70,6 +70,9 @@ p {
 
 h3 {
   font-size: 25px;
+  @media screen and (max-width:1024px) {
+    font-size: 20px;
+  }
 }
 
 form {
@@ -104,6 +107,9 @@ form {
   h3 {
     font-size: 60px;
     font-weight: bold;
+    @media screen and (max-width: 1024px) {
+      font-size: 40px;
+    }
   }
 
   p {
