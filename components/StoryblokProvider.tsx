@@ -1,6 +1,5 @@
-"use client";
 import type { PropsWithChildren } from "react";
-import { storyblokInit } from "@storyblok/react/rsc";
+import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 import Page from "./page";
 import { Hero } from "./ui/hero";
 import { About } from "./ui/about";
@@ -9,6 +8,8 @@ import Form from "./ui/Form";
 import { SmallHero } from "./ui/small-hero";
 
 storyblokInit({
+  accessToken: process.env.STORYBLOK_TOKEN,
+
   components: {
     page: Page,
     hero: Hero,
@@ -17,6 +18,7 @@ storyblokInit({
     form: Form,
     small_hero: SmallHero,
   },
+  use: [apiPlugin],
   enableFallbackComponent: true,
 });
 
