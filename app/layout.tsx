@@ -7,7 +7,7 @@ import { Footer } from "@/components/ui/footer/footer";
 const cachedFetch = (input: any, init?: any): Promise<Response> => {
   return fetch(input, {
     ...init,
-    cache: "no-store",
+    cache: "default",
   });
 };
 

@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 const Custom404 = () => {
   return (
     <main>
@@ -10,5 +9,4 @@ const Custom404 = () => {
     </main>
   );
 };
-
 export default Custom404;
