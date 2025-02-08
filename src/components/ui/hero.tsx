@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { storyblokEditable } from "@storyblok/react";
 import Image from "next/image";

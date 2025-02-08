@@ -1,4 +1,5 @@
 "use client";
+
 import type { PropsWithChildren } from "react";
 import { storyblokInit } from "@storyblok/react/rsc";
 import Page from "./page";

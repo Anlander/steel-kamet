@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Card } from "@/components/ui/produkt/card";
 import { Hero } from "@/components/ui/produkt/hero";
