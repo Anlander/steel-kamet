@@ -8,7 +8,9 @@ export async function getAterVinningArchive() {
   };
 
   const client = getStoryblokApi();
-  const data = await client.get(`cdn/stories/`, sbParams);
+  const data = await client.get(`cdn/stories/`, sbParams, {
+    cache: "no-store",
+  });
 
   return data.data.stories;
 }
@@ -21,7 +23,9 @@ export async function getBetongArchive() {
   };
 
   const client = getStoryblokApi();
-  const data = await client.get(`cdn/stories/`, sbParams);
+  const data = await client.get(`cdn/stories/`, sbParams, {
+    cache: "no-store",
+  });
 
   return data.data.stories;
 }
@@ -34,7 +38,9 @@ export async function getPrefabArchive() {
   };
 
   const client = getStoryblokApi();
-  const data = await client.get(`cdn/stories/`, sbParams);
+  const data = await client.get(`cdn/stories/`, sbParams, {
+    cache: "no-store",
+  });
 
   return data.data.stories;
 }

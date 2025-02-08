@@ -9,7 +9,10 @@ export async function getAterVinning(slug: string) {
   const client = getStoryblokApi();
   const data = await client.get(
     `cdn/stories/atervinningssystem-foer-betong/${slug}`,
-    sbParams
+    sbParams,
+    {
+      cache: "no-store",
+    }
   );
 
   return data.data.story;
@@ -24,7 +27,10 @@ export async function getBetongBlandning(slug: string) {
   const client = getStoryblokApi();
   const data = await client.get(
     `cdn/stories/betongblandningsanlaeggningar/${slug}`,
-    sbParams
+    sbParams,
+    {
+      cache: "no-store",
+    }
   );
 
   return data.data.story;
@@ -39,7 +45,10 @@ export async function getPrefab(slug: string) {
   const client = getStoryblokApi();
   const data = await client.get(
     `cdn/stories/prefabricerade-loesningar/${slug}`,
-    sbParams
+    sbParams,
+    {
+      cache: "no-store",
+    }
   );
 
   return data.data.story;
