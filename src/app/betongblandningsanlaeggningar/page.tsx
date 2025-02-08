@@ -33,7 +33,7 @@ const Page = async () => {
       />
       <div className="grid grid-cols-1 gap-14">
         <div className="flex flex-col gap-5">
-          <h3 className="font-bold">VÅTBETONG</h3>
+          <h3 className="font-bold">FÄRSKBETONG</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {data
               .filter((item: any) => item.content.category.includes("wetmix"))
