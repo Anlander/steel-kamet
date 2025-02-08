@@ -3,6 +3,7 @@ import { getStoryblokApi } from "@storyblok/react";
 export async function getAterVinning(slug: string) {
   const sbParams = {
     version: "draft" as const,
+    cv: Date.now(),
   };
 
   const client = getStoryblokApi();
@@ -17,6 +18,7 @@ export async function getAterVinning(slug: string) {
 export async function getBetongBlandning(slug: string) {
   const sbParams = {
     version: "draft" as const,
+    cv: Date.now(),
   };
 
   const client = getStoryblokApi();
@@ -31,6 +33,7 @@ export async function getBetongBlandning(slug: string) {
 export async function getPrefab(slug: string) {
   const sbParams = {
     version: "draft" as const,
+    cv: Date.now(),
   };
 
   const client = getStoryblokApi();

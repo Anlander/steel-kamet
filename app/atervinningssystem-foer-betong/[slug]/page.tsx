@@ -1,10 +1,7 @@
 import { Content } from "@/components/ui/produkt/content";
 import { Gallery } from "@/components/ui/produkt/gallery";
 import { Hero } from "@/components/ui/produkt/hero";
-import {
-  getAterVinning,
-  getBetongBlandning,
-} from "@/lib/get-products/get-productby-slug";
+import { getAterVinning } from "@/lib/get-products/get-productby-slug";
 
 type Params = Promise<{ slug: string }>;
 
@@ -20,7 +17,7 @@ const page = async ({ params }: { params: Params }) => {
         arrow={true}
       />
       <Content content={data.content.content} />
-      {data.content.gallery && <Gallery gallery={data.content.gallery} />}
+      {data?.content?.gallery && <Gallery gallery={data.content.gallery} />}
     </div>
   );
 };
