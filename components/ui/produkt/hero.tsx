@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { BiArrowBack } from "react-icons/bi";
 import { render } from "storyblok-rich-text-react-renderer";
 
@@ -23,10 +24,11 @@ export const Hero = ({
   content,
   arrow,
 }: HeroProps) => {
+  const router = useRouter();
   return (
     <div className="mb-5">
       <div className="h-[60vh] text-white mb-10 relative">
-        {/* {arrow && (
+        {arrow && (
           <button
             type="button"
             className="bottom-5 rounded-full bg-slate-500 p-2 left-5 fixed z-20"
@@ -34,7 +36,7 @@ export const Hero = ({
           >
             <BiArrowBack color="white" fontSize={30} />
           </button>
-        )} */}
+        )}
         <div className="absolute bottom-32 lg:bottom-5 lg:text-right w-full z-20 px-5 lg:px-10 py-5">
           <h3>{sub}</h3>
           <h2 className="font-bold">{title}</h2>
