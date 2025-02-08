@@ -24,8 +24,13 @@ const FooterSection = ({ settings }: FooterProps) => {
           </Link>
         </div>
 
-        <div className="text-center mb-5 lg:mb-0">
-          © 2025 Steel Kamet. All rights reserved.
+        <div className="text-center mb-5 lg:mb-0 flex flex-col gap-2">
+          <span> © 2025 Steel Kamet. All rights reserved. </span>
+          <h3>Kontakt</h3>
+          <Link href="tel:+46 703 762 380">+46 703 762 380</Link>
+          <Link href="mailto:rosemarie.beckman@steelkamet.se">
+            sales@steelkamet.se
+          </Link>
         </div>
       </div>
     </div>
