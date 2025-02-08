@@ -6,7 +6,9 @@ export async function getSettings() {
   };
 
   const client = getStoryblokApi();
-  const data = await client.get(`cdn/stories/settings`, sbParams);
+  const data = await client.get(`cdn/stories/settings`, sbParams, {
+    cache: "no-store",
+  });
 
   return { data };
 }
