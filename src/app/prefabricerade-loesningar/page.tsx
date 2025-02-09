@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/produkt/card";
 import { Hero } from "@/components/ui/produkt/hero";
 import { getPrefabArchive } from "@/lib/get-products/get-archive";
@@ -19,9 +18,14 @@ const Page = async () => {
         alt={props.prefab_title}
         text={props.prefab_text}
         content={props.prefab_content_product}
+        ank="MOBILA BLOCKTILLVERKNINGSMASKINER"
+        anksec="TILLBEHÖR FAMILJ"
       />
       <div className="grid grid-cols-1 gap-14">
-        <div className="flex flex-col gap-5">
+        <div
+          className="flex flex-col gap-5"
+          id="MOBILA BLOCKTILLVERKNINGSMASKINER"
+        >
           <h3 className="font-bold">Mobila blocktillverkningsmaskiner</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {data
@@ -33,7 +37,7 @@ const Page = async () => {
               ))}
           </div>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5" id="TILLBEHÖR FAMILJ">
           <h3 className="font-bold">Tillbehör familjen</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {data

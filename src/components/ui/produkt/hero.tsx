@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { BiArrowBack } from "react-icons/bi";
+import { BsArrowDown, BsArrowDownCircle } from "react-icons/bs";
 import { render } from "storyblok-rich-text-react-renderer";
 
 interface HeroProps {
@@ -13,6 +15,8 @@ interface HeroProps {
   text?: string;
   content?: string;
   arrow?: boolean;
+  ank?: string;
+  anksec?: string;
 }
 
 export const Hero = ({
@@ -23,6 +27,8 @@ export const Hero = ({
   text,
   content,
   arrow,
+  ank,
+  anksec,
 }: HeroProps) => {
   const router = useRouter();
   return (
@@ -54,6 +60,24 @@ export const Hero = ({
           className="z-0"
         />
       </div>
+      {ank && (
+        <div className="flex justify-start gap-2 text-sm lg:text-lg lg:gap-10 flex-col lg:flex-row">
+          <Link
+            href={`#${ank}`}
+            className="flex gap-2 lg:justify-center items-center hover:text-slate-500 transition-all duration-500"
+          >
+            <span>{ank}</span>
+            <BsArrowDownCircle fontSize={18} />
+          </Link>
+          <Link
+            href={`#${anksec}`}
+            className="flex gap-2 lg:justify-center items-center hover:text-slate-500 transition-all duration-500"
+          >
+            <span>{anksec}</span>
+            <BsArrowDownCircle fontSize={18} />
+          </Link>
+        </div>
+      )}
       <span className="render-content h-full py-10 flex mb-14 flex-col gap-2 max-w-full lg:max-w-[60%] bottom-10">
         {render(text)}
       </span>

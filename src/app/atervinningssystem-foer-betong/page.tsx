@@ -17,9 +17,11 @@ const Page = async () => {
         alt={props.atervinning_title}
         text={props.atervinning_text}
         content={props.atervinning_content}
+        ank="BETONGÅTERVINNINGSSYSTEM"
+        anksec="FORMAR FÖR BLOCK"
       />
       <div className="grid grid-cols-1 gap-14">
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5" id="BETONGÅTERVINNINGSSYSTEM">
           <h3 className="font-bold uppercase">Betongåtervinningssystem</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {data
@@ -31,7 +33,7 @@ const Page = async () => {
               ))}
           </div>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5" id="FORMAR FÖR BLOCK">
           <h3 className="font-bold uppercase">Formar för block</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {data

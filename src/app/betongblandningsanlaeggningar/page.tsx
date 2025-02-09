@@ -30,9 +30,11 @@ const Page = async () => {
         alt={props.betong_title}
         text={props.betong_text}
         content={props.betong_content}
+        ank="FÄRSKBETONG"
+        anksec="TORRBETONG"
       />
       <div className="grid grid-cols-1 gap-14">
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5" id="FÄRSKBETONG">
           <h3 className="font-bold">FÄRSKBETONG</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {data
@@ -42,7 +44,7 @@ const Page = async () => {
               ))}
           </div>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5" id="TORRBETONG">
           <h3 className="font-bold">TORRBETONG</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {data
