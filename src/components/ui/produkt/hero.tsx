@@ -27,7 +27,7 @@ export const Hero = ({
   const router = useRouter();
   return (
     <div className="mb-5">
-      <div className="h-[60vh] lg:h-[60vh] text-white mb-10 relative">
+      <div className=" lg:h-[60vh] text-white mb-10 relative h-[600px]">
         {arrow && (
           <button
             type="button"
