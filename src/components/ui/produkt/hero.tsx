@@ -37,7 +37,7 @@ export const Hero = ({
             <BiArrowBack color="white" fontSize={30} />
           </button>
         )}
-        <div className="absolute lg:text-right w-full z-20 px-5 lg:px-10 py-5">
+        <div className="absolute lg:text-right w-full z-20 px-5 lg:px-10 py-5 lg:mb-5">
           <h3>{sub}</h3>
           <h2 className="font-bold text-xl lg:text-[35px]">{title}</h2>
         </div>
@@ -54,7 +54,7 @@ export const Hero = ({
           className="z-0"
         />
       </div>
-      <span className="render-content h-full py-20 flex mb-14 flex-col gap-2 max-w-full lg:max-w-[60%] bottom-10">
+      <span className="render-content h-full py-10 flex mb-14 flex-col gap-2 max-w-full lg:max-w-[60%] bottom-10">
         {render(text)}
       </span>
       <span className="text-xl lg:text-5xl mb-14 font-bold lg:leading-[60px] max-w-full lg:max-w-[70%] flex">
