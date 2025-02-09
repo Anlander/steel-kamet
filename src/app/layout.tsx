@@ -4,8 +4,7 @@ import { StoryblokProvider } from "@/components/StoryblokProvider";
 import { Header } from "@/components/ui/Header/Header";
 import { Footer } from "@/components/ui/footer/footer";
 import "./globals.scss";
-
-
+import CookieConsent from "@/components/ui/cookies";
 
 export const metadata: Metadata = {
   title: "SteelKamet",
@@ -39,6 +38,7 @@ export default function RootLayout({
         <body>
           <Header />
           {children}
+          <CookieConsent />
           <Footer />
         </body>
       </html>
