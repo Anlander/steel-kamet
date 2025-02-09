@@ -27,7 +27,7 @@ export const Hero = ({
   const router = useRouter();
   return (
     <div className="mb-5">
-      <div className="h-[60vh] text-white mb-10 relative">
+      <div className="h-[60vh] lg:h-[60vh] text-white mb-10 relative">
         {arrow && (
           <button
             type="button"
@@ -39,7 +39,7 @@ export const Hero = ({
         )}
         <div className="absolute bottom-32 lg:bottom-5 lg:text-right w-full z-20 px-5 lg:px-10 py-5">
           <h3>{sub}</h3>
-          <h2 className="font-bold">{title}</h2>
+          <h2 className="font-bold text-xl lg:text-[35px]">{title}</h2>
         </div>
         <div className="bg-slate-500 opacity-80 w-full absolute h-full z-10" />
         <Image

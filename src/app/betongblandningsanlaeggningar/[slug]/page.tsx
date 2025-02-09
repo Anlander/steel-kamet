@@ -2,7 +2,6 @@ import { Content } from "@/components/ui/produkt/content";
 import { Gallery } from "@/components/ui/produkt/gallery";
 import { Hero } from "@/components/ui/produkt/hero";
 import { getBetongBlandning } from "@/lib/get-products/get-productby-slug";
-import { apiPlugin, storyblokInit } from "@storyblok/react";
 
 type Params = Promise<{ slug: string }>;
 
