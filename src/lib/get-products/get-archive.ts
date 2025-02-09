@@ -44,3 +44,18 @@ export async function getPrefabArchive() {
 
   return data.data.stories;
 }
+
+export async function getTillbehorArchive() {
+  const sbParams = {
+    version: "draft" as const,
+    starts_with: "tillbehor-reservdelar",
+    cv: Date.now(),
+  };
+
+  const client = getStoryblokApi();
+  const data = await client.get(`cdn/stories/`, sbParams, {
+    cache: "no-store",
+  });
+
+  return data.data.stories;
+}

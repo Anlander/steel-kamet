@@ -49,7 +49,7 @@ export const Services = ({ blok }: ServicesProps) => {
                 <h3 className="text-[18px] w-full font-bold break-words">
                   {item.title}
                 </h3>
-                <span className="mx-auto">{item.content}</span>
+                <span>{item.content}</span>
                 <button className="absolute bottom-5 right-5">
                   <FaArrowRightLong fontSize={30} />
                 </button>
