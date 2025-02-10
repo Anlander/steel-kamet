@@ -53,3 +53,21 @@ export async function getPrefab(slug: string) {
 
   return data.data.story;
 }
+
+export async function getTillbehor(slug: string) {
+  const sbParams = {
+    version: "draft" as const,
+    cv: Date.now(),
+  };
+
+  const client = getStoryblokApi();
+  const data = await client.get(
+    `cdn/stories/tillbehor-reservdelar/${slug}`,
+    sbParams,
+    {
+      cache: "no-store",
+    }
+  );
+
+  return data.data.story;
+}
