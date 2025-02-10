@@ -1,39 +1,31 @@
 import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
 import { redirect } from "next/navigation";
 import { fetchSettings } from "../lib/apireq";
+import { getSettings } from "@/lib/get-settings";
+import { getData } from "@/lib/get-data";
 
-async function fetchData(slug: string, lang: string) {
-  let sbParams = {
+export async function fetchData(slug: string) {
+  const sbParams = {
     version: "draft" as const,
-    language: lang,
   };
 
   const client = getStoryblokApi();
-  try {
-    const data = await client.get(`cdn/stories/${slug}`, sbParams);
+  const data = await client.get(`cdn/stories/${slug}`, sbParams, {
+    cache: "no-store",
+  });
 
-    if (!data) {
-      throw new Error("Not Found");
-    }
-
-    return { data };
-  } catch (error: any) {
-    if (error.response && error.response.status === 500) {
-      redirect("/500");
-    } else {
-      throw error;
-    }
-  }
+  return { data };
 }
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const pathname = params.slug;
   const slugName = pathname === undefined ? `home` : pathname;
-  const story = await fetchData(slugName, `${process.env.LANGUAGE}`);
-  const settings = await fetchSettings(`${process.env.LANGUAGE}`);
+  const story = fetchData(slugName);
+  const settings = await getSettings();
+  console.log((await story).data.data);
   return (
     <StoryblokStory
-      story={story.data.data.story}
+      story={(await story).data.data.story}
       settings={settings.data.data.story.content}
     />
   );
