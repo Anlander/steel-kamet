@@ -59,3 +59,18 @@ export async function getTillbehorArchive() {
 
   return data.data.stories;
 }
+
+export async function getAutomaticArchive() {
+  const sbParams = {
+    version: "draft" as const,
+    starts_with: "automation-och-styrsystem",
+    cv: Date.now(),
+  };
+
+  const client = getStoryblokApi();
+  const data = await client.get(`cdn/stories/`, sbParams, {
+    cache: "no-store",
+  });
+
+  return data.data.stories;
+}

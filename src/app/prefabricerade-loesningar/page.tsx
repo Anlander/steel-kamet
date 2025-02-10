@@ -19,7 +19,6 @@ const Page = async () => {
         text={props.prefab_text}
         content={props.prefab_content_product}
         ank="MOBILA BLOCKTILLVERKNINGSMASKINER"
-        anksec="TILLBEHÖR FAMILJ"
       />
       <div className="grid grid-cols-1 gap-14">
         <div

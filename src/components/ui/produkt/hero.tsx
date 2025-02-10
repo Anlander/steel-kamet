@@ -17,6 +17,7 @@ interface HeroProps {
   arrow?: boolean;
   ank?: string;
   anksec?: string;
+  sideimge?: boolean;
 }
 
 export const Hero = ({
@@ -29,6 +30,7 @@ export const Hero = ({
   arrow,
   ank,
   anksec,
+  sideimge,
 }: HeroProps) => {
   const router = useRouter();
   return (
@@ -80,9 +82,23 @@ export const Hero = ({
           )}
         </div>
       )}
-      <span className="render-content h-full py-10 flex mb-14 flex-col gap-2 max-w-full lg:max-w-[60%] bottom-10">
-        {render(text)}
-      </span>
+      {sideimge ? (
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-14">
+          <span className="render-content h-full py-10 flex mb-14 flex-col gap-2 max-w-full lg:max-w-[100%] bottom-10">
+            {render(text)}
+          </span>
+          <Image
+            src="https://a.storyblok.com/f/321658/1200x942/558d98213f/architettura-compunet.webp"
+            width={700}
+            height={500}
+            alt=""
+          />
+        </div>
+      ) : (
+        <span className="render-content h-full py-10 flex mb-14 flex-col gap-2 max-w-full lg:max-w-[60%] bottom-10">
+          {render(text)}
+        </span>
+      )}
       <span className="text-xl lg:text-5xl mb-14 font-bold lg:leading-[60px] max-w-full lg:max-w-[70%] flex">
         {content}
       </span>

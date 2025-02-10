@@ -71,3 +71,20 @@ export async function getTillbehor(slug: string) {
 
   return data.data.story;
 }
+export async function getAutomatic(slug: string) {
+  const sbParams = {
+    version: "draft" as const,
+    cv: Date.now(),
+  };
+
+  const client = getStoryblokApi();
+  const data = await client.get(
+    `cdn/stories/automation-och-styrsystem/${slug}`,
+    sbParams,
+    {
+      cache: "no-store",
+    }
+  );
+
+  return data.data.story;
+}

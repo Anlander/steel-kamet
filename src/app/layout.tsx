@@ -7,7 +7,7 @@ import "./globals.scss";
 import CookieConsent from "@/components/ui/cookies";
 
 export const metadata: Metadata = {
-  title: "SteelKamet",
+  title: "SteelKamet | BUILDING, TRUST INNOVATING TOMORROW",
   description:
     "Steel Kamet är en banbrytande aktör inom betong- och prefabindustrin, där vi levererar innovativa lösningar som möter de högsta standarderna.",
 };
