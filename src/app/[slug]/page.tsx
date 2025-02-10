@@ -22,7 +22,6 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   const slugName = pathname === undefined ? `home` : pathname;
   const story = fetchData(slugName);
   const settings = await getSettings();
-  console.log((await story).data.data);
   return (
     <StoryblokStory
       story={(await story).data.data.story}

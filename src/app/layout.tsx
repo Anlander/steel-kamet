@@ -12,18 +12,18 @@ export const metadata: Metadata = {
     "Steel Kamet är en banbrytande aktör inom betong- och prefabindustrin, där vi levererar innovativa lösningar som möter de högsta standarderna.",
 };
 
-const cachedFetch = (input: any, init?: any): Promise<Response> => {
-  return fetch(input, {
-    ...init,
-    cache: "no-store",
-  });
-};
+// const cachedFetch = (input: any, init?: any): Promise<Response> => {
+//   return fetch(input, {
+//     ...init,
+//     cache: "no-store",
+//   });
+// };
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
   use: [apiPlugin],
   apiOptions: {
-    fetch: cachedFetch,
+    region: "eu",
   },
 });
 

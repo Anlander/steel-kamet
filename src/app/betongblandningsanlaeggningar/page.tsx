@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/produkt/card";
 import { Hero } from "@/components/ui/produkt/hero";
-import { getSettings } from "@/lib/get-settings";
 import { getStoryblokApi } from "@storyblok/react";
 
 export async function getBetongArchive() {
@@ -14,6 +13,19 @@ export async function getBetongArchive() {
   const data = await client.get(`cdn/stories/`, sbParams);
 
   return data.data.stories;
+}
+
+export async function getSettings() {
+  const sbParams = {
+    version: "draft" as const,
+  };
+
+  const client = getStoryblokApi();
+  const data = await client.get(`cdn/stories/settings`, sbParams, {
+    cache: "no-store",
+  });
+
+  return { data };
 }
 
 const Page = async () => {
