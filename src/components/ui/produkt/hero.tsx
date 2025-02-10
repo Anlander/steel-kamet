@@ -95,7 +95,7 @@ export const Hero = ({
           />
         </div>
       ) : (
-        <span className="render-content h-full py-10 flex mb-14 flex-col gap-2 max-w-full lg:max-w-[60%] bottom-10">
+        <span className="render-content h-full py-10 flex mb-14 flex-col gap-10 max-w-full lg:max-w-[60%] bottom-10">
           {render(text)}
         </span>
       )}
