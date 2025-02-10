@@ -18,7 +18,6 @@ const Page = async () => {
         alt={props.automatic_title}
         text={props.automatic_text}
         content={props.automatic_content_product}
-        ank="Automation och styrsystem"
         sideimge={true}
       />
       {/* <div className="grid grid-cols-1 gap-14">
