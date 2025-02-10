@@ -1,10 +1,20 @@
-import { Card } from "@/components/ui/produkt/card";
 import { Hero } from "@/components/ui/produkt/hero";
-import { getAutomaticArchive } from "@/lib/get-products/get-archive";
-import { getSettings } from "@/lib/get-settings";
+import { getStoryblokApi } from "@storyblok/react";
+
+export async function getSettings() {
+  const sbParams = {
+    version: "draft" as const,
+  };
+
+  const client = getStoryblokApi();
+  const data = await client.get(`cdn/stories/settings`, sbParams, {
+    cache: "no-store",
+  });
+
+  return { data };
+}
 
 const Page = async () => {
-  const data = await getAutomaticArchive();
   const settings = await getSettings();
 
   const props = settings.data.data.story.content;
