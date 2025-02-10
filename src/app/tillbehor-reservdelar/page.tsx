@@ -30,11 +30,11 @@ const Page = async () => {
         alt={props.tillbehor_title}
         text={props.tillbehor_text}
         content={props.tillbehor_content_product}
-        ank="TILLBEHÖR FAMILJ"
+        ank="Tillbehör Serien"
       />
       <div className="grid grid-cols-1 gap-14">
-        <div className="flex flex-col gap-5" id="TILLBEHÖR FAMILJ">
-          <h3 className="font-bold">Tillbehör familjen</h3>
+        <div className="flex flex-col gap-5" id="Tillbehör Serien">
+          <h3 className="font-bold">TILLBEHÖR SERIEN</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {data
               .filter((item: any) =>
