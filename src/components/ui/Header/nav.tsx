@@ -49,6 +49,7 @@ export const Nav = ({ settings }: SettingsProps) => {
         <Link href="/#om-sk">Om Steel Kamet</Link>
         <Link href="/#form">Kontakt</Link>
         <Link href="/var-vision-vara-mal">Vår vision & våra mål</Link>
+        <Link href="/uthyrning-av-fabriker">Uthyrning av fabriker</Link>
       </div>
     </nav>
   );
